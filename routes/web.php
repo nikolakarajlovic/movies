@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,5 @@ Route::get('/movies', [MoviesController::class,'index']);
 Route::get('/movies/create', [MoviesController::class, 'create']);
 Route::get('/movies/{id}', [MoviesController::class,'show']);
 Route::post('/movies', [MoviesController::class, 'store']);
+
+Route::post('/movies/{movie_id}/comments', [CommentController::class, 'store']); 
